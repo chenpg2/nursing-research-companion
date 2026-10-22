@@ -1,0 +1,17 @@
+# 默认忽略全部，只放行公开内容
+/*
+!/.gitignore
+!/README.md
+!/CHANGELOG.md
+!/LICENSE
+!/prompts/
+!/skills/
+!/course/
+/course/*
+!/course/demo-data/
+
+.DS_Store
+node_modules/
+__pycache__/
+*.pyc
+~$*
