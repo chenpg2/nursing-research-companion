@@ -2,6 +2,12 @@
 
 提示词卡（`prompts/`）和 Skill 版（`skills/nursing-research-companion/`）一起更新，版本号以这里为准。
 
+## v1.0.1（2026-10-22）
+
+- 新增 `INSTALL-AI.md`：写给 AI 看的 Skill 安装说明。README 里给了一段安装提示词，复制给 AI 工具就能自动安装；AI 打不开链接时，把这份文件整个粘贴过去也行。
+- README 的 Skill 安装部分补了 Kimi Code 的目录。
+- 提示词卡和 Skill 本身的内容没有变。
+
 ## v1.0.0（2026-10-22）
 
 第一个公开版本，采用 CC BY-NC-SA 4.0 许可。方法学内容和 v0.4 相同，只做了发布前的整理：

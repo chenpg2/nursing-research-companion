@@ -34,28 +34,45 @@
 
 ## 用法二：作为 Skill 安装
 
-Skill 是一种「装进 AI 工具里的能力包」：装好以后不用每次粘贴提示词，直接说「帮我做护理科研」，AI 就会按这套流程带你走。目前在 Claude Code 上测试过；Kimi Work、proma 等支持 Skill 的工具，按平台的说明导入同一个文件夹即可，我们还没有逐一测试。
+Skill 是一种「装进 AI 工具里的能力包」：装好以后不用每次粘贴提示词，直接说「帮我做护理科研」，AI 就会按这套流程带你走。需要能操作你电脑文件的 AI 工具，比如 Claude Code、Kimi Code，或其他支持 Skill 的 AI 工具（如 Kimi Work、proma，这两个我们还没有逐一测试）。网页上的普通聊天窗口装不了，请用上面的复制粘贴版。
 
 和复制粘贴版相比，Skill 版多了三件事：能读你电脑里的文献 PDF 和数据文件，统计会写代码真的算一遍，进度会存进项目档案 `护理科研项目档案.md`（放在你当前打开的工作文件夹里），下次打开接着做。
 
-**第一步：下载。** 不会用 git 的话，在本页顶部点绿色的「Code」按钮，选「Download ZIP」，解压。会用 git 的话：
+### 方式一：让 AI 帮你装（推荐）
+
+把下面这段话复制，发给你的 AI 工具：
+
+```
+请帮我安装「护理科研陪跑助手」Skill。
+安装说明：https://raw.githubusercontent.com/chenpg2/nursing-research-companion/main/INSTALL-AI.md
+请读取这份说明的完整原文（不要只看摘要），再一步一步照做。改动我电脑上的文件之前，先告诉我你的计划。
+```
+
+AI 打不开这个链接时（国内网络访问 GitHub 有时不稳定），打开仓库里的 [INSTALL-AI.md](INSTALL-AI.md)，点文件右上角的复制按钮（Copy raw file）复制整份内容，粘贴给 AI。这份文件是专门写给 AI 看的安装说明，它会照着装。
+
+装完以后新开一个对话，说「帮我做护理科研」。AI 先做自我介绍、再出一道选择题问你在哪个阶段，就说明装好了。
+
+### 方式二：自己动手装
+
+**第一步：下载。** 在本页顶部点绿色的「Code」按钮，选「Download ZIP」，解压。会用 git 的话：
 
 ```bash
 git clone https://github.com/chenpg2/nursing-research-companion.git
 ```
 
-**第二步：把 `skills/nursing-research-companion` 这个文件夹放到 Skill 目录里。** 以 Claude Code 为例：
+**第二步：把 `skills/nursing-research-companion` 这个文件夹放到 Skill 目录里。** 常见的目录（`~` 是你的用户文件夹，Windows 上是 `C:\Users\你的用户名`）：
 
-- macOS / Linux：`~/.claude/skills/`（`~` 是你的用户文件夹）
-- Windows：`C:\Users\你的用户名\.claude\skills\`
+- Claude Code：`~/.claude/skills/`
+- Kimi Code：`~/.kimi-code/skills/`
+- 其他工具：按工具的说明，导入同一个文件夹即可
 
-用命令复制（macOS / Linux，在下载好的仓库文件夹里运行）：
+以前装过旧版本的话，先把旧的 `nursing-research-companion` 文件夹移到别处再放新的。Windows 上直接把文件夹拖进去就行；macOS / Linux 也可以用命令复制（以 Claude Code 为例，在下载好的仓库文件夹里运行）：
 
 ```bash
-cp -r skills/nursing-research-companion ~/.claude/skills/
+mkdir -p ~/.claude/skills && cp -r skills/nursing-research-companion ~/.claude/skills/
 ```
 
-**第三步：检查。** 新开一个会话，说「帮我做护理科研」。AI 先做自我介绍、再给出一道选择题问你在哪个阶段，就说明装好了。
+**第三步：检查。** 新开一个会话，说「帮我做护理科研」，看到自我介绍和阶段选择题就说明装好了。
 
 ## 用之前请知道
 
@@ -67,6 +84,7 @@ cp -r skills/nursing-research-companion ~/.claude/skills/
 ## 仓库里有什么
 
 ```
+INSTALL-AI.md       写给 AI 看的 Skill 安装说明
 prompts/            9 张提示词卡（复制粘贴版）
 skills/             Skill 版（SKILL.md + references/ + assets/）
 course/demo-data/   练习用的模拟数据：重复测量方差分析的 SPSS 风格输出、基线表、生成脚本
