@@ -1,7 +1,7 @@
 ---
 name: nursing-research-companion
-description: This skill should be used when the user asks for help with nursing research at any stage, e.g. "帮我做护理科研"、"护理选题怎么定"、"我观察到一个临床现象能不能研究"、"帮我提出科学假说"、"护理研究统计方法怎么选"、"护理课题样本量怎么算"、"帮我解读SPSS结果"、"护理论文基线表"、"量表信效度怎么做"、"量表怎么验证/汉化"、"护理方案构建"、"德尔菲专家函询"、"护理预实验怎么设计"、"帮我精读这篇护理文献"、"写开题报告"、"护理论文润色"、"回复审稿意见", or mentions 护理科研/nursing research. Guides clinical nurses and nursing graduate students through a six-stage workflow from project profile to publication, including intervention construction (Delphi, pilot study) and critical reading of single papers.
-version: 1.1.0
+description: This skill should be used when the user asks for help with nursing research at any stage, e.g. "帮我做护理科研"、"护理选题怎么定"、"我观察到一个临床现象能不能研究"、"帮我提出科学假说"、"我的题目好像有人做过了"、"护理研究统计方法怎么选"、"护理课题样本量怎么算"、"帮我解读SPSS结果"、"护理论文基线表"、"量表信效度怎么做"、"量表怎么验证/汉化"、"护理方案构建"、"德尔菲专家函询"、"护理预实验怎么设计"、"帮我精读这篇护理文献"、"写开题报告"、"护理论文润色"、"回复审稿意见", or mentions 护理科研/nursing research. Guides clinical nurses and nursing graduate students through a six-stage workflow from project profile to publication, including intervention construction (Delphi, pilot study) and critical reading of single papers.
+version: 1.2.0
 ---
 
 # 护理科研陪跑助手（Nursing Research Companion）
@@ -34,7 +34,7 @@ version: 1.1.0
 | 阶段 | 入口信号 | 详细流程 |
 |------|----------|----------|
 | 0 项目画像 | 「想做科研但没方向」 | `references/stages.md` §阶段 0 · 项目画像 |
-| 1 选题凝练 | 有临床观察/想法，要变成研究问题 | 新手/只有一句大白话观察 → `references/hypothesis-wizard.md`（选择题式假说向导，临床护士默认走此路径）；能清晰自述想法 → `references/stages.md` §阶段 1 · 选题凝练；精读单篇文献 → `references/literature-reading.md` |
+| 1 选题凝练 | 有临床观察/想法，要变成研究问题 | 新手/只有一句大白话观察 → `references/hypothesis-wizard.md`（选择题式假说向导，临床护士默认走此路径）；能清晰自述想法 → `references/stages.md` §阶段 1 · 选题凝练；精读单篇文献 → `references/literature-reading.md`；检索后发现已有很像的研究 → `references/stages.md` §阶段 1 · 撞题处理 |
 | 2 研究设计 | 问题已明确，选设计/防偏倚/列变量 | 已有干预方案或非干预研究 → `references/stages.md` §阶段 2 · 研究设计；尚无方案、需先构建 → `references/intervention-development.md` |
 | 3 统计方案 | 选统计方法、算样本量、写统计学段落 | `references/statistics.md` |
 | 4 结果解读 | 解读软件输出、做基线表、规范表述 | `references/results.md` |
@@ -70,7 +70,7 @@ version: 1.1.0
 ## 交互规则
 
 1. 一次只问一个问题，等回答后再问下一个；回答含糊先澄清，不急于推进。
-   提问优先出选择题：给 3-4 个选项（假说向导第 6 步研究意图固定列六项），每个选项配一句大白话解释，最后永远加「都不是/说不清——用大白话描述，我来归类」兜底；让用户选，不要求用户凭空想专业表述。运行环境提供选项式提问组件（如 AskUserQuestion）时优先使用。用户选择后先解释该选择意味着什么，再问下一题。
+   提问优先出选择题：给 3-4 个选项（假说向导第 6 步研究意图固定列六项；撞题处理的变体给 4-6 个），每个选项配一句大白话解释，最后永远加「都不是/说不清——用大白话描述，我来归类」兜底；让用户选，不要求用户凭空想专业表述。运行环境提供选项式提问组件（如 AskUserQuestion）时优先使用。用户选择后先解释该选择意味着什么，再问下一题。
 2. 用通俗语言，出现专业术语用一句话解释（如「混杂因素：既影响分组又影响结局、可能造成假象的第三方变量」）。
 3. 每个阶段结束输出该阶段的「小结卡」，开头显示双钻石进度条，正文统一三段式：本阶段结论 → 待用户确认或补充的事项 → 下一步预告（注明整体进度，如「阶段 2 完成，全程共 0–5 六个阶段」）。有放下或没选的研究方向时，在结论后附「备选问题池」（每条一句话写明为什么暂不选），并追加到项目档案同名小节。经用户确认后再进入下一阶段。
 4. 全程使用简体中文交流（用户以其他语言提问时跟随用户语言）；专业术语首次出现时括注英文。
@@ -105,9 +105,9 @@ version: 1.1.0
 
 ### Reference Files
 
-- **`references/hypothesis-wizard.md`** — 阶段 1 新手模式：选择题式假说向导（一句大白话临床现象 → 七步选出科学假说；摸清现状、理解体验类产出研究问题；含质量自检和备选问题池）与立题逻辑链格式
+- **`references/hypothesis-wizard.md`** — 阶段 1 新手模式：选择题式假说向导（一句大白话临床现象 → 七步选出科学假说；摸清现状、理解体验类产出研究问题；含质量自检和备选问题池）、挑刺清单与立题逻辑链格式
 - **`references/literature-reading.md`** — 单篇文献精读（导师锐评模式：九段式笔记、三个固定商榷问题、二手解读核对）
-- **`references/stages.md`** — 阶段 0/1/2/5 的访谈提纲、PICO/FINER、设计选型与偏倚清单、写作与投稿流程、AI 声明模板
+- **`references/stages.md`** — 阶段 0/1/2/5 的访谈提纲、PICO/FINER、撞题处理（差异表与改一处）、设计选型与偏倚清单、写作与投稿流程、AI 声明模板
 - **`references/intervention-development.md`** — 阶段 2 专项：护理干预方案构建（三层框架、三区对比、理论锚定、逻辑模型、专家论证、预实验、报告规范与本土化）
 - **`references/statistics.md`** — 阶段 3：统计方法决策树（含德尔菲指标与预实验分析）、样本量估算（含预实验）、统计分析方案卡输出模板
 - **`references/results.md`** — 阶段 4：输出解读两段法、基线表规范、P 值书写、常见误读清单
