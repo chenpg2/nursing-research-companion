@@ -14,8 +14,8 @@
 |------|-----------|-------------|
 | [00 总提示词](prompts/00-总提示词.md) | 不知道从哪开始 | AI 先判断你在哪一步，再一步步带着走 |
 | [01 项目画像](prompts/01-项目画像.md) | 想做科研，还没有方向 | 几个可做的方向，标好难度 |
-| [07 科学假说向导](prompts/07-科学假说向导.md) | 只有一句大白话的临床现象 | 假说卡：H1/H0、PICO、立题逻辑链（摸清现状、理解体验类课题得到研究问题卡） |
-| [02 选题凝练](prompts/02-选题凝练.md) | 想法比较清楚了，或者要读文献 | 选题卡、文献矩阵、单篇文献精读笔记 |
+| [07 科学假说向导](prompts/07-科学假说向导.md) | 只有一句大白话的临床现象 | 假说卡：H1/H0、PICO、立题逻辑链、挑刺清单（摸清现状、理解体验类课题得到研究问题卡） |
+| [02 选题凝练](prompts/02-选题凝练.md) | 想法比较清楚了，要读文献，或者发现题目撞了 | 选题卡、文献矩阵、单篇文献精读笔记；撞题时的差异表和「只改一处」的新方向 |
 | [03 研究设计](prompts/03-研究设计.md) | 选研究设计、防偏倚 | 设计类型、偏倚清单、变量表 |
 | [08 干预方案构建](prompts/08-干预方案构建.md) | 做「基于 XX 理论的方案构建」类课题 | 理论对应表、逻辑模型、德尔菲和预实验方案 |
 | [04 统计方案](prompts/04-统计方案.md) | 选统计方法、算样本量 | 统计方法、样本量，以及写开题报告用的统计段落初稿 |
@@ -95,6 +95,7 @@ course/demo-data/   练习用的模拟数据：重复测量方差分析的 SPSS 
 ## 设计参考
 
 - 双钻石导航和 08 卡的方案构建流程，参考了 Sevillano-Garayoa L, Martín-Martín J, Olano-Lizarraga M. Co-designing a family-centered intervention to support home-based caregiving in advanced chronic illness: a double diamond framework-guided process. *International Journal of Nursing Studies*, 2026, 183: 105639. doi:10.1016/j.ijnurstu.2026.105639
+- 07 卡的复述确认、不写假说的研究问题、备选问题池、挑刺清单，以及 02 卡的撞题处理，参考了 Peters MAK. How to develop good research questions. *Nature Human Behaviour*, 2025, 9: 1759-1761. doi:10.1038/s41562-025-02292-5（一篇方法论评论）
 - 复杂干预的研制框架：Skivington K, et al. A new framework for developing and evaluating complex interventions: update of Medical Research Council guidance. *BMJ*, 2021, 374: n2061.
 
 统计部分的判断标准（卡方的使用条件、量表效度指标、德尔菲指标等）采用国内医学统计教材和护理研究里的常用口径，不同教材的数值可能略有出入，以你的目标期刊和导师的要求为准。预实验样本量这类有争议的地方，卡里写了具体出处。
